@@ -6,6 +6,9 @@
   <link rel="stylesheet" href="assets/css/styles.css">
   <script type="text/javascript" src="assets/js/lib/paperjs-v0.11.5/dist/paper-full.js"></script>
   <script type="text/paperscript" canvas="myCanvas">
+
+  var circles = [];
+
   function onKeyDown(event) {
     var maxPoint = new Point(view.size.width, view.size.height);
     var randomPoint = Point.random();
