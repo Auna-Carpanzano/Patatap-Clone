@@ -10,12 +10,26 @@
 
   var circles = [];
 
+  var sound1 = new Howl({
+    src: ['assets/sounds/sounds/bubbles.mp3']
+  });
+
+  var sound2 = new Howl({
+    src: ['assets/sounds/sounds/clay.mp3']
+  });
+
   function onKeyDown(event) {
     var maxPoint = new Point(view.size.width, view.size.height);
     var randomPoint = Point.random();
     var point = maxPoint * randomPoint;
     var newCircle = new Path.Circle(point, 500);
     newCircle.fillColor = "orange";
+    if(event.key === "a") {
+      sound1.play();
+    }
+    if(event.key === "s") {
+      sound2.play();
+    }
     circles.push(newCircle);
   }
 
